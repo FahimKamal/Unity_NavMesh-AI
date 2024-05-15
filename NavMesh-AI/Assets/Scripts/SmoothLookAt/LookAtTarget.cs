@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LookAtTarget : MonoBehaviour
@@ -19,7 +17,7 @@ public class LookAtTarget : MonoBehaviour
 
     private IEnumerator LookAt()
     {
-        Quaternion lookRotation = Quaternion.LookRotation(target.position - transform.position);
+        var lookRotation = Quaternion.LookRotation(target.position - transform.position);
 
         var time = 0.0f;
         while (time < 1)
@@ -30,6 +28,10 @@ public class LookAtTarget : MonoBehaviour
         }
     }
 
+    
+    /// <summary>
+    /// For Demo Purpose.
+    /// </summary>
     private void OnGUI()
     {
         if (GUI.Button(new Rect(10,10,200,30), "Look At"))
